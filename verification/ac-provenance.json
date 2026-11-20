@@ -1,0 +1,605 @@
+{
+  "initial": "822a688a04bce5167f44226efbec952069042b6c",
+  "baseline": "0e0b1ddcfafb9ccaa455cbec8295ae757d7efd07",
+  "revision": "0f10d10a3d3a135952585ed196bf71b3cbaae1c3",
+  "current": "9beb0fe4a2b2734182ec233aa5084700f177491c",
+  "records": [
+    {
+      "id": "AC-01.1",
+      "story": "US-01",
+      "text": "Форма містить email, пароль і підтвердження пароля.",
+      "oracle": "Відкрити реєстрацію: є три поля email/password/confirmation; надсилання не потрібне.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L7",
+      "baseline_text": "Форма містить email, пароль і підтвердження пароля.",
+      "current_text": "Форма містить email, пароль і підтвердження пароля.",
+      "previous_lr1": "Порожні email/паролі блокують надсилання; рівно 8 символів допускається, 7 відхиляється формою та API.",
+      "br": "BR-01",
+      "component": "RegistrationPage",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-01-01"
+    },
+    {
+      "id": "AC-01.2",
+      "story": "US-01",
+      "text": "Валідний запит створює обліковий запис.",
+      "oracle": "Подати валідні дані з новим email: створено один акаунт. Автовхід — окремий P-03, не текст цього AC.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L7",
+      "baseline_text": "Валідний запит створює обліковий запис.",
+      "current_text": "Валідний запит створює обліковий запис.",
+      "previous_lr1": "Given новий email і допустимі паролі; When реєстрація успішна; Then створено одного User, UI виконує вхід та відкриває профіль із JWT без збереження пароля.",
+      "br": "BR-01",
+      "component": "RegistrationPage",
+      "api": "API-01",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-01-02"
+    },
+    {
+      "id": "AC-01.3",
+      "story": "US-01",
+      "text": "Якщо email уже зайнятий, API відхиляє повторну реєстрацію.",
+      "oracle": "Повторити вже зайнятий email: API відхиляє; нового акаунта немає. Чинний HTTP400 EmailBusy, не вигаданий409.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L7",
+      "baseline_text": "Якщо email уже зайнятий, API відхиляє повторну реєстрацію.",
+      "current_text": "Якщо email уже зайнятий, API відхиляє повторну реєстрацію.",
+      "previous_lr1": "Given email уже зайнятий; When повторна реєстрація; Then повідомлення про дублікат, нового User немає.",
+      "br": "BR-01",
+      "component": "RegistrationPage",
+      "api": "API-01",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-01-03"
+    },
+    {
+      "id": "AC-01.4",
+      "story": "US-01",
+      "text": "Якщо паролі різні, форма показує помилку і не надсилає запит",
+      "oracle": "Різні password/confirmation: помилка на формі, register-запит не надсилається. Пряма перевірка confirmation API — EXT-02.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L7",
+      "baseline_text": "Якщо паролі різні, форма показує помилку і не надсилає запит",
+      "current_text": "Якщо паролі різні, форма показує помилку і не надсилає запит",
+      "previous_lr1": "Given password і passwordConfirmation різні; When надсилання форми; Then запит реєстрації не відправляється; прямий API-запит теж має відхилятися.",
+      "br": "BR-02",
+      "component": "RegistrationPage",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-01-04"
+    },
+    {
+      "id": "AC-02.1",
+      "story": "US-02",
+      "text": "Вхід використовує email і пароль.",
+      "oracle": "Заповнити email/password на формі входу; саме вони передаються password-гілці login.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L8",
+      "baseline_text": "Вхід використовує email і пароль.",
+      "current_text": "Вхід використовує email і пароль.",
+      "previous_lr1": "Given форма входу; When email або пароль порожній; Then запит не надсилається й показано причину.",
+      "br": "BR-03",
+      "component": "LoginPage",
+      "api": "API-02",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-02-01"
+    },
+    {
+      "id": "AC-02.2",
+      "story": "US-02",
+      "text": "Після успішного входу відкривається профіль.",
+      "oracle": "За успішного входу відкривається профіль. Перенаправлення одразу в бібліотеку з P-03 лишається окремою непогодженою ревізією.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L8",
+      "baseline_text": "Після успішного входу відкривається профіль.",
+      "current_text": "Після успішного входу відкривається профіль.",
+      "previous_lr1": "Given правильні дані; When вхід; Then отримано JWT та відкрито власний профіль.",
+      "br": "BR-03",
+      "component": "LoginPage",
+      "api": "API-02;API-08",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-02-02"
+    },
+    {
+      "id": "AC-02.3",
+      "story": "US-02",
+      "text": "Помилка входу показується на формі без переходу у профіль.",
+      "oracle": "Невірні облікові дані: помилка лишається на формі, перехід до профілю не виконується.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L8",
+      "baseline_text": "Помилка входу показується на формі без переходу у профіль.",
+      "current_text": "Помилка входу показується на формі без переходу у профіль.",
+      "previous_lr1": "Given неправильні дані; When вхід; Then помилка й форма лишається, нового токена немає.",
+      "br": "BR-03",
+      "component": "LoginPage",
+      "api": "API-02",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-02-03"
+    },
+    {
+      "id": "AC-02.4",
+      "story": "US-02",
+      "text": "Пароль прихований на старті, користувач може показати і знову приховати його",
+      "oracle": "Пароль на старті input type=password; натиснути показ/приховати двічі: type=text/password, значення незмінне. Це не перевірка JWT або ролі Admin.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L8",
+      "baseline_text": "Пароль прихований на старті, користувач може показати і знову приховати його",
+      "current_text": "Пароль прихований на старті, користувач може показати і знову приховати його",
+      "previous_lr1": "Given відсутній або прострочений JWT; When читання власного профілю; Then 401 без даних; Admin після входу має також права покупця.",
+      "br": "BR-15",
+      "component": "LoginPage",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-01"
+      ],
+      "test": "TC-02-04"
+    },
+    {
+      "id": "AC-03.1",
+      "story": "US-03",
+      "text": "Каталог показує картки ігор з назвою та ціною.",
+      "oracle": "Повернути список різних Product: кожна картка показує назву й ціну саме свого товару.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L9",
+      "baseline_text": "Каталог показує картки ігор з назвою та ціною.",
+      "current_text": "Каталог показує картки ігор з назвою та ціною.",
+      "previous_lr1": "Given публічний каталог; When відповідь успішна; Then кожна картка містить name і price відповідного Product.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-03-01"
+    },
+    {
+      "id": "AC-03.2",
+      "story": "US-03",
+      "text": "Під час завантаження є індикатор.",
+      "oracle": "Затримати відповідь каталогу: до завершення показано індикатор, а не порожній список.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L9",
+      "baseline_text": "Під час завантаження є індикатор.",
+      "current_text": "Під час завантаження є індикатор.",
+      "previous_lr1": "Given запит ще триває; When показ каталогу; Then видимий стан завантаження, який відрізняється від порожнього результату.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-03-02"
+    },
+    {
+      "id": "AC-03.3",
+      "story": "US-03",
+      "text": "Помилка завантаження має окремий стан.",
+      "oracle": "Змоделювати помилку запиту: показано окремий error-стан, відмінний від no matches.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L9",
+      "baseline_text": "Помилка завантаження має окремий стан.",
+      "current_text": "Помилка завантаження має окремий стан.",
+      "previous_lr1": "Given мережева/серверна помилка; When завантаження; Then показано помилку, а не стан нульового результату.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-03-03"
+    },
+    {
+      "id": "AC-03.4",
+      "story": "US-03",
+      "text": "Після успішного повторного запиту відображаються актуальні картки",
+      "oracle": "Після помилки змінити відповідь сервера й повторити запит: показано нові картки, стару помилку прибрано. Це перевірюване уточнення без зміни сенсу.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L9",
+      "baseline_text": "Після успішного повторного запиту відображаються актуальні картки",
+      "current_text": "Після успішного повторного запиту відображаються актуальні картки",
+      "previous_lr1": "Given помилка каталогу; When повторне завантаження успішне; Then помилка зникає, картки відповідають поверненим Product.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-03-04"
+    },
+    {
+      "id": "AC-04.1",
+      "story": "US-04",
+      "text": "Введення запиту звужує видимий список.",
+      "oracle": "На dataset із збігами й незбігами ввести запит: видимий список звужується. Case/trim конкретизуються BR-04 як технічна пропозиція.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L10",
+      "baseline_text": "Введення запиту звужує видимий список.",
+      "current_text": "Введення запиту звужує видимий список.",
+      "previous_lr1": "Given текст пошуку; When застосування; Then показано лише назви з відповідним підрядком без урахування регістру.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-04-01"
+    },
+    {
+      "id": "AC-04.2",
+      "story": "US-04",
+      "text": "Нуль збігів показує порожній стан.",
+      "oracle": "Ввести рядок без збігів: показано порожній стан, не server error.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L10",
+      "baseline_text": "Нуль збігів показує порожній стан.",
+      "current_text": "Нуль збігів показує порожній стан.",
+      "previous_lr1": "Given жодна гра не відповідає умовам; When фільтрація; Then порожній список і окреме повідомлення без помилки.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-04-02"
+    },
+    {
+      "id": "AC-04.3",
+      "story": "US-04",
+      "text": "Очищення запиту повертає ігри, які відповідають чинним фільтрам.",
+      "oracle": "За активного жанру очистити текст: залишаються ігри чинного жанру. Це вже джерельне правило, його не лишено OPEN.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L10",
+      "baseline_text": "Очищення запиту повертає ігри, які відповідають чинним фільтрам.",
+      "current_text": "Очищення запиту повертає ігри, які відповідають чинним фільтрам.",
+      "previous_lr1": "Given текст і жанр; When очищено лише текст; Then жанр збережений і результат відповідає жанру.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-04-03"
+    },
+    {
+      "id": "AC-04.4",
+      "story": "US-04",
+      "text": "Вибір жанру обмежує результати цим жанром",
+      "oracle": "Обрати жанр: усі результати належать йому; за тексту й жанру перевірити AND, задане SRC-02.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L10",
+      "baseline_text": "Вибір жанру обмежує результати цим жанром",
+      "current_text": "Вибір жанру обмежує результати цим жанром",
+      "previous_lr1": "Given текст і category як жанр; When обидва фільтри задані; Then виконується AND, у тому числі після інших фільтрів.",
+      "br": "BR-04",
+      "component": "StorePage",
+      "api": "API-03",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-04-04"
+    },
+    {
+      "id": "AC-05.1",
+      "story": "US-05",
+      "text": "Натискання картки відкриває деталі саме цієї гри.",
+      "oracle": "Натиснути картку X: відкриті деталі X, не Y. Пізніший варіант «Деталі» на картці позначено в історії; прийняття заміни trigger не вигадано.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L11",
+      "baseline_text": "Дія «Деталі» на картці відкриває саме цю гру.",
+      "current_text": "Дія «Деталі» на картці відкриває саме цю гру.",
+      "previous_lr1": "Given вибрано картку id=X; When деталі; Then відкрито саме Product X; невідомий id дає 404, без підміни товаром Y.",
+      "br": "BR-04",
+      "component": "GameDetailsModal",
+      "api": "API-04",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-05-01"
+    },
+    {
+      "id": "AC-05.2",
+      "story": "US-05",
+      "text": "У деталях видно назву й ціну.",
+      "oracle": "У відкритих деталях показано назву й ціну вибраної гри.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L11",
+      "baseline_text": "У деталях видно назву й ціну.",
+      "current_text": "У деталях видно назву й ціну.",
+      "previous_lr1": "Given деталі; When відображення; Then name і price відповідають Product; відсутня обкладинка не змінює ідентичність товару.",
+      "br": "BR-04",
+      "component": "GameDetailsModal",
+      "api": "API-04",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-05-02"
+    },
+    {
+      "id": "AC-05.3",
+      "story": "US-05",
+      "text": "Закриття деталей повертає до каталогу.",
+      "oracle": "Закрити деталі: повернення до каталогу. Збереження всього контексту — додаткова P-07, збереження жанру при очищенні — окремий AC-04.3.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L11",
+      "baseline_text": "Закриття деталей повертає до каталогу.",
+      "current_text": "Закриття деталей повертає до каталогу.",
+      "previous_lr1": "Given відкриті деталі; When закриття; Then повернення до каталогу зі збереженими фільтрами.",
+      "br": "BR-16",
+      "component": "GameDetailsModal",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-02"
+      ],
+      "test": "TC-05-03"
+    },
+    {
+      "id": "AC-05.4",
+      "story": "US-05",
+      "text": "Дія додавання в деталях передає до кошика саме вибрану гру",
+      "oracle": "Додати X з його деталей: у кошик передано саме X. Кількість=1/owned-check — P-01/EXT-03, не підміна цього AC.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L11",
+      "baseline_text": "Дія додавання в деталях передає до кошика саме вибрану гру",
+      "current_text": "Дія додавання в деталях передає до кошика саме вибрану гру",
+      "previous_lr1": "Given доступна непридбана гра; When додавання з деталей; Then одна позиція кошика й оновлена сума; придбана гра відхиляється.",
+      "br": "BR-05",
+      "component": "GameDetailsModal",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-03"
+      ],
+      "test": "TC-05-04"
+    },
+    {
+      "id": "AC-06.1",
+      "story": "US-06",
+      "text": "Додана гра відображається в кошику.",
+      "oracle": "Додати X: X видно в кошику; коректність duplicate/no-op перевіряється окремо за кандидатом P-01.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L12",
+      "baseline_text": "Додана гра відображається в кошику.",
+      "current_text": "Додана гра відображається в кошику.",
+      "previous_lr1": "Given кошик; When додано гру або повторно ту саму; Then одна позиція quantity=1 та сума без дублювання.",
+      "br": "BR-05",
+      "component": "widgets/Cart",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-03"
+      ],
+      "test": "TC-06-01"
+    },
+    {
+      "id": "AC-06.2",
+      "story": "US-06",
+      "text": "Зміна кількості чи видалення оновлює склад і суму.",
+      "oracle": "Видалити позицію: склад/сума змінюються відповідно. Якщо перевіряється первинна гілка quantity-update, нова кількість змінює суму; конфлікт цієї гілки з P-01 явно OPEN, до погодження не видаляти її й не заявляти прийняття single-copy.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L12",
+      "baseline_text": "Видалення позиції оновлює склад і суму. Якщо Q-06 дозволить зміну кількості, вона також має оновлювати суму.",
+      "current_text": "Видалення позиції оновлює склад і суму.",
+      "previous_lr1": "Given позиція в кошику; When вилучення; Then її немає й суму перераховано без інших змін.",
+      "br": "BR-05",
+      "component": "widgets/Cart",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-03"
+      ],
+      "test": "TC-06-02"
+    },
+    {
+      "id": "AC-06.3",
+      "story": "US-06",
+      "text": "У порожньому кошику перехід до оплати недоступний.",
+      "oracle": "Порожній кошик: кнопка переходу до оплати недоступна. Серверний empty-check — додатковий BR-06, не підміна UX AC.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L12",
+      "baseline_text": "У порожньому кошику перехід до оплати недоступний.",
+      "current_text": "У порожньому кошику перехід до оплати недоступний.",
+      "previous_lr1": "Given вилучено останню гру; When кошик; Then порожній стан і сума 0.",
+      "br": "BR-05",
+      "component": "widgets/Cart",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-03"
+      ],
+      "test": "TC-06-03"
+    },
+    {
+      "id": "AC-06.4",
+      "story": "US-06",
+      "text": "Після видалення останньої гри показується порожній стан",
+      "oracle": "Видалити останню гру: відображений порожній стан. Не плутати із AC-06.3.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L12",
+      "baseline_text": "Після видалення останньої гри показується порожній стан",
+      "current_text": "Після видалення останньої гри показується порожній стан",
+      "previous_lr1": "Given порожній кошик; When оформлення через UI або API; Then замовлення не створюється; UI блокує дію, API відхиляє.",
+      "br": "BR-05",
+      "component": "widgets/Cart",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-03"
+      ],
+      "test": "TC-06-04"
+    },
+    {
+      "id": "AC-07.1",
+      "story": "US-07",
+      "text": "З непорожнього кошика можна відкрити форму оплати.",
+      "oracle": "З непорожнього кошика відкрити форму оплати. Не прирівнювати відкриття форми до server Bill creation або успішної оплати.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L13",
+      "baseline_text": "З непорожнього кошика можна відкрити форму оплати.",
+      "current_text": "З непорожнього кошика можна відкрити форму оплати.",
+      "previous_lr1": "Given непорожній допустимий кошик; When створення; Then сервер визначає власника, ціни, валюту, quantity=1 і Pending; сума дорівнює сумі позицій.",
+      "br": "BR-06",
+      "component": "widgets/Cart / PaymentModal",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-03",
+        "SRC-04"
+      ],
+      "test": "TC-07-01"
+    },
+    {
+      "id": "AC-07.2",
+      "story": "US-07",
+      "text": "Оформлення доступне без списання бонусів, зі значенням 0.",
+      "oracle": "Оформити без списання бонусів, значення використаних бонусів 0; у поточному релізі списання відкладене за SRC-03.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L13",
+      "baseline_text": "Оформлення доступне без списання бонусів, зі значенням 0.",
+      "current_text": "Оформлення доступне без списання бонусів.",
+      "previous_lr1": "Given оформлення поточного релізу; When запит; Then bonusPointsUsed=0; списання бонусів і довільна зміна валюти не дозволені.",
+      "br": "BR-06",
+      "component": "widgets/Cart / PaymentModal",
+      "api": "API-12",
+      "src": [
+        "SRC-03",
+        "SRC-04"
+      ],
+      "test": "TC-07-02"
+    },
+    {
+      "id": "AC-07.3",
+      "story": "US-07",
+      "text": "Помилка оплати не відкриває придбану гру в бібліотеці.",
+      "oracle": "Керована помилка оплати не надає нової гри. Збереження попередніх прав підтверджене SRC-04/PDF і деталізоване BR-08; це не нове припущення.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L13",
+      "baseline_text": "Відмова оплати не надає нової гри в бібліотеці; доступ до раніше придбаних ігор зберігається.",
+      "current_text": "Відмова оплати не надає нової гри в бібліотеці, доступ до раніше придбаних ігор зберігається.",
+      "previous_lr1": "Given успішна оплата або відмова; When результат; Then Paid надає лише власний доступ, відмова не надає нового й не забирає старого.",
+      "br": "BR-07;BR-08",
+      "component": "widgets/Cart / PaymentModal",
+      "api": "API-13;API-14;API-15;API-09",
+      "src": [
+        "SRC-04",
+        "SRC-05"
+      ],
+      "test": "TC-07-03"
+    },
+    {
+      "id": "AC-07.4",
+      "story": "US-07",
+      "text": "Під час обробки повторне підтвердження недоступне.",
+      "oracle": "Поки обробка триває, повторне підтвердження в UI недоступне. Серверний lock/idempotency — EXT-05.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L13",
+      "baseline_text": "Під час обробки повторне підтвердження недоступне.",
+      "current_text": "Під час обробки повторне підтвердження недоступне.",
+      "previous_lr1": "Given PROCESSING; When друге підтвердження; Then 409, без нового списання; повтор тієї самої події ідемпотентний.",
+      "br": "BR-07",
+      "component": "widgets/Cart / PaymentModal",
+      "api": "API-13;API-14;API-15",
+      "src": [
+        "SRC-04"
+      ],
+      "test": "TC-07-04"
+    },
+    {
+      "id": "AC-07.5",
+      "story": "US-07",
+      "text": "Скасування повертає до кошика зі збереженими позиціями",
+      "oracle": "Натиснути «Скасувати» до підтвердження або у формі після відмови: повернення до кошика, усі позиції збережені. Retry того самого Bill — окремий P-02, не цей AC.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L13",
+      "baseline_text": "Скасування повертає до кошика зі збереженими позиціями",
+      "current_text": "Скасування повертає до кошика зі збереженими позиціями",
+      "previous_lr1": "Given DECLINED; When повтор оплати; Then та сама bill.id переходить у PROCESSING; кошик не очищено, сума знімка незмінна.",
+      "br": "BR-09;BR-16",
+      "component": "widgets/Cart / PaymentModal",
+      "api": "NOT APPLICABLE",
+      "src": [
+        "SRC-04"
+      ],
+      "test": "TC-07-05"
+    },
+    {
+      "id": "AC-08.1",
+      "story": "US-08",
+      "text": "Бібліотека доступна з профілю покупця.",
+      "oracle": "Із профілю відкрити власну бібліотеку. Не підміняти цей навігаційний AC перевіркою Paid.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L14",
+      "baseline_text": "Бібліотека доступна з профілю покупця.",
+      "current_text": "Бібліотека доступна з профілю покупця.",
+      "previous_lr1": "Given власний Paid Bill; When бібліотека; Then відповідний Product доступний один раз.",
+      "br": "BR-16",
+      "component": "ProfilePage",
+      "api": "API-08;API-09",
+      "src": [
+        "SRC-05"
+      ],
+      "test": "TC-08-01"
+    },
+    {
+      "id": "AC-08.2",
+      "story": "US-08",
+      "text": "Гра із замовлення у статусі `Paid` або `Completed` входить до бібліотеки власника.",
+      "oracle": "Власні Paid/Completed надають гру; source SRC-05/PDF додатково виключає чужі й неоплачені. Перевірити власника й статус, не наявність UI-кадру.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L14",
+      "baseline_text": "До бібліотеки входять лише ігри з власних замовлень у статусі `Paid` або `Completed`. Неоплачені й чужі замовлення не надають доступу.",
+      "current_text": "До бібліотеки входять лише ігри з власних замовлень у статусі `Paid` або `Completed`. Неоплачені й чужі замовлення не надають доступу.",
+      "previous_lr1": "Given чужий, Pending, PROCESSING або DECLINED Bill; When бібліотека; Then він не надає прав; чужі ключі не повертаються.",
+      "br": "BR-03;BR-08",
+      "component": "ProfilePage",
+      "api": "API-09",
+      "src": [
+        "SRC-05"
+      ],
+      "test": "TC-08-02"
+    },
+    {
+      "id": "AC-08.3",
+      "story": "US-08",
+      "text": "Бібліотека без придбаних ігор має порожній стан.",
+      "oracle": "За відсутності придбаних ігор видно порожній стан бібліотеки.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L14",
+      "baseline_text": "Бібліотека без придбаних ігор має порожній стан.",
+      "current_text": "Бібліотека без придбаних ігор має порожній стан.",
+      "previous_lr1": "Given немає власних оплачених покупок; When бібліотека; Then 200 [] і порожній UI-стан.",
+      "br": "BR-08",
+      "component": "ProfilePage",
+      "api": "API-09",
+      "src": [
+        "SRC-05"
+      ],
+      "test": "TC-08-03"
+    },
+    {
+      "id": "AC-08.4",
+      "story": "US-08",
+      "text": "Із бібліотеки можна перейти до магазину",
+      "oracle": "Із порожньої та непорожньої бібліотеки перейти до магазину. Збереження Paid→Completed/заборона повторної покупки — BR-07/08 і P-01, не заміна навігації.",
+      "source_commit": "822a688a04bce5167f44226efbec952069042b6c",
+      "source_url": "https://github.com/NureTatkovOleksandr/luden-ux-ui/blob/822a688a04bce5167f44226efbec952069042b6c/01_requirements/01_Input_Pack_v0.1.md#L14",
+      "baseline_text": "Із бібліотеки можна перейти до магазину",
+      "current_text": "Із бібліотеки можна перейти до магазину",
+      "previous_lr1": "Given власний Paid став Completed; When бібліотека; Then доступ збережений; спроба повторної покупки або видалення товару не руйнує попередній доступ.",
+      "br": "BR-16",
+      "component": "ProfilePage",
+      "api": "API-03",
+      "src": [
+        "SRC-05"
+      ],
+      "test": "TC-08-04"
+    }
+  ]
+}

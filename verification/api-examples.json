@@ -1,0 +1,629 @@
+[
+  {
+    "id": "API-01",
+    "method": "POST",
+    "path": "/api/Authorization/register",
+    "controller": "Authorization",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": {
+      "email": "buyer@example.test",
+      "password": "ExamplePass8"
+    },
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": "Success",
+    "error_example": {
+      "status": 400,
+      "body": "EmailBusy"
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-02",
+    "method": "POST",
+    "path": "/api/Authorization/login",
+    "controller": "Authorization",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": {
+      "email": "buyer@example.test",
+      "password": "ExamplePass8"
+    },
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": {
+      "token": "SYNTHETIC_JWT_NOT_A_CREDENTIAL"
+    },
+    "error_example": {
+      "status": 500,
+      "body": "Синтетична помилка сервісу"
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-03",
+    "method": "GET",
+    "path": "/api/Product",
+    "controller": "Product",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": [
+      {
+        "id": 101,
+        "name": "Приклад гри",
+        "description": "Синтетичний опис",
+        "price": 299,
+        "stock": 10,
+        "regionId": 1,
+        "discountPercentage": 0,
+        "salesCount": 0,
+        "region": null,
+        "createdAt": "2026-11-20T10:00:00Z",
+        "updatedAt": null,
+        "developer": "Студія",
+        "publisher": "Видавець",
+        "releaseDate": null,
+        "category": "RPG",
+        "coverUrl": null,
+        "files": [],
+        "licenses": []
+      }
+    ],
+    "error_example": {
+      "status": 500,
+      "body": "Синтетична помилка сервісу"
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-04",
+    "method": "GET",
+    "path": "/api/Product/{id}",
+    "controller": "Product",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {
+      "id": 101
+    },
+    "response_status": 200,
+    "response_body": {
+      "id": 101,
+      "name": "Приклад гри",
+      "description": "Синтетичний опис",
+      "price": 299,
+      "stock": 10,
+      "regionId": 1,
+      "discountPercentage": 0,
+      "salesCount": 0,
+      "region": null,
+      "createdAt": "2026-11-20T10:00:00Z",
+      "updatedAt": null,
+      "developer": "Студія",
+      "publisher": "Видавець",
+      "releaseDate": null,
+      "category": "RPG",
+      "coverUrl": null,
+      "files": [],
+      "licenses": []
+    },
+    "error_example": {
+      "status": 404,
+      "body": "Product with ID 999 not found"
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-05",
+    "method": "POST",
+    "path": "/api/Product",
+    "controller": "Product",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "multipart/form-data; representation only",
+    "request_body": {
+      "name": "Приклад гри",
+      "description": "Опис",
+      "price": 299,
+      "stock": 10,
+      "regionId": 1,
+      "discountPercentage": 0,
+      "category": "RPG"
+    },
+    "request_path_values": {},
+    "response_status": 201,
+    "response_body": {
+      "id": 101,
+      "name": "Приклад гри",
+      "description": "Синтетичний опис",
+      "price": 299,
+      "stock": 10,
+      "regionId": 1,
+      "discountPercentage": 0,
+      "salesCount": 0,
+      "region": null,
+      "createdAt": "2026-11-20T10:00:00Z",
+      "updatedAt": null,
+      "developer": "Студія",
+      "publisher": "Видавець",
+      "releaseDate": null,
+      "category": "RPG",
+      "coverUrl": null,
+      "files": [],
+      "licenses": []
+    },
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-06",
+    "method": "PUT",
+    "path": "/api/Product/{id}",
+    "controller": "Product",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": {
+      "name": "Нова назва"
+    },
+    "request_path_values": {
+      "id": 101
+    },
+    "response_status": 200,
+    "response_body": {
+      "id": 101,
+      "name": "Нова назва",
+      "description": "Синтетичний опис",
+      "price": 299,
+      "stock": 10,
+      "regionId": 1,
+      "discountPercentage": 0,
+      "salesCount": 0,
+      "region": null,
+      "createdAt": "2026-11-20T10:00:00Z",
+      "updatedAt": null,
+      "developer": "Студія",
+      "publisher": "Видавець",
+      "releaseDate": null,
+      "category": "RPG",
+      "coverUrl": null,
+      "files": [],
+      "licenses": []
+    },
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-07",
+    "method": "DELETE",
+    "path": "/api/Product/{id}",
+    "controller": "Product",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {
+      "id": 101
+    },
+    "response_status": 204,
+    "response_body": null,
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-08",
+    "method": "GET",
+    "path": "/api/User/profile",
+    "controller": "User",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": {
+      "username": "buyer",
+      "email": "buyer@example.test",
+      "role": "User",
+      "bonusPoints": 0,
+      "createdAt": "2026-11-20T10:00:00Z",
+      "updatedAt": null,
+      "avatarUrl": null,
+      "bills": [],
+      "products": []
+    },
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-09",
+    "method": "GET",
+    "path": "/api/User/products",
+    "controller": "User",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": [
+      {
+        "id": 101,
+        "name": "Приклад гри",
+        "description": "Синтетичний опис",
+        "price": 299,
+        "stock": 10,
+        "regionId": 1,
+        "discountPercentage": 0,
+        "salesCount": 0,
+        "region": null,
+        "createdAt": "2026-11-20T10:00:00Z",
+        "updatedAt": null,
+        "developer": "Студія",
+        "publisher": "Видавець",
+        "releaseDate": null,
+        "category": "RPG",
+        "coverUrl": null,
+        "files": [],
+        "licenses": []
+      }
+    ],
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-10",
+    "method": "GET",
+    "path": "/api/Bill/user",
+    "controller": "Bill",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": [
+      {
+        "id": 201,
+        "createdAt": "2026-11-20T10:05:00Z",
+        "totalAmount": 299,
+        "status": "Pending",
+        "billItems": []
+      }
+    ],
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-11",
+    "method": "GET",
+    "path": "/api/Bill/{id}",
+    "controller": "Bill",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {
+      "id": 201
+    },
+    "response_status": 200,
+    "response_body": {
+      "id": 201,
+      "createdAt": "2026-11-20T10:05:00Z",
+      "totalAmount": 299,
+      "status": "Pending",
+      "billItems": []
+    },
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-12",
+    "method": "POST",
+    "path": "/api/Bill",
+    "controller": "Bill",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": {
+      "userId": 7,
+      "totalAmount": 299,
+      "status": "Pending",
+      "currency": "UAH",
+      "bonusPointsUsed": 0,
+      "items": [
+        {
+          "productId": 101,
+          "quantity": 1,
+          "price": 299
+        }
+      ]
+    },
+    "request_path_values": {},
+    "response_status": 201,
+    "response_body": {
+      "id": 201,
+      "createdAt": "2026-11-20T10:05:00Z",
+      "totalAmount": 299,
+      "status": "Pending",
+      "billItems": []
+    },
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "Чинний формат Bill create/PUT є небезпечним; приклад не робить client-owned status/price нормативним."
+  },
+  {
+    "id": "API-13",
+    "method": "POST",
+    "path": "/api/Payment/stripe/create",
+    "controller": "Payment",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": 201,
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": {
+      "success": true,
+      "paymentIntentId": "pi_example_secret_example"
+    },
+    "error_example": {
+      "status": 400,
+      "body": {
+        "error": "Синтетична помилка Stripe"
+      }
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-14",
+    "method": "POST",
+    "path": "/api/Payment/stripe/update-status",
+    "controller": "Payment",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": {
+      "paymentIntentId": "pi_example",
+      "paymentMethod": "pm_example",
+      "action": "confirm"
+    },
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": {
+      "success": true,
+      "status": "updated",
+      "paymentId": null
+    },
+    "error_example": {
+      "status": 400,
+      "body": {
+        "error": "Синтетична помилка Stripe"
+      }
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-15",
+    "method": "POST",
+    "path": "/api/Payment/stripe/complete",
+    "controller": "Payment",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": "pi_example",
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": {
+      "success": true,
+      "paymentId": 301
+    },
+    "error_example": {
+      "status": 400,
+      "body": {
+        "error": "Синтетична помилка Stripe"
+      }
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-16",
+    "method": "GET",
+    "path": "/api/Bill",
+    "controller": "Bill",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {},
+    "response_status": 200,
+    "response_body": [
+      {
+        "id": 201,
+        "createdAt": "2026-11-20T10:05:00Z",
+        "totalAmount": 299,
+        "status": "Pending",
+        "billItems": []
+      }
+    ],
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-17",
+    "method": "PUT",
+    "path": "/api/Bill/{id}",
+    "controller": "Bill",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "application/json",
+    "request_body": {
+      "id": 201,
+      "userId": 7,
+      "currency": "UAH",
+      "totalAmount": 299,
+      "status": "Pending",
+      "createdAt": "2026-11-20T10:05:00Z",
+      "updatedAt": null
+    },
+    "request_path_values": {
+      "id": 201
+    },
+    "response_status": 204,
+    "response_body": null,
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "Чинний формат Bill create/PUT є небезпечним; приклад не робить client-owned status/price нормативним."
+  },
+  {
+    "id": "API-18",
+    "method": "DELETE",
+    "path": "/api/Bill/{id}",
+    "controller": "Bill",
+    "implementation": "IMPLEMENTED / NOT RUN",
+    "request_content_type": "none",
+    "request_body": null,
+    "request_path_values": {
+      "id": 201
+    },
+    "response_status": 204,
+    "response_body": null,
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "note": "NOT RUN; synthetic example, not recorded traffic"
+  },
+  {
+    "id": "API-P01",
+    "method": "GET",
+    "path": "/api/Cart",
+    "implementation": "PROPOSED / NOT IMPLEMENTED / NOT RUN",
+    "request_body": null,
+    "response_status": 200,
+    "response_body": {
+      "userId": 7,
+      "items": [
+        {
+          "productId": 101,
+          "quantity": 1,
+          "unitPrice": 299
+        }
+      ],
+      "totalAmount": 299,
+      "currency": "UAH"
+    },
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "invalid_request_example": null
+  },
+  {
+    "id": "API-P02",
+    "method": "POST",
+    "path": "/api/Cart/items",
+    "implementation": "PROPOSED / NOT IMPLEMENTED / NOT RUN",
+    "request_body": {
+      "productId": 101
+    },
+    "response_status": 200,
+    "response_body": {
+      "userId": 7,
+      "items": [
+        {
+          "productId": 101,
+          "quantity": 1,
+          "unitPrice": 299
+        }
+      ],
+      "totalAmount": 299,
+      "currency": "UAH"
+    },
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "invalid_request_example": null
+  },
+  {
+    "id": "API-P03",
+    "method": "DELETE",
+    "path": "/api/Cart/items/{productId}",
+    "implementation": "PROPOSED / NOT IMPLEMENTED / NOT RUN",
+    "request_body": null,
+    "response_status": 204,
+    "response_body": null,
+    "error_example": {
+      "status": 401,
+      "body": null
+    },
+    "invalid_request_example": null
+  },
+  {
+    "id": "API-P04",
+    "method": "PATCH",
+    "path": "/api/Product/{id}",
+    "implementation": "PROPOSED / NOT IMPLEMENTED / NOT RUN",
+    "request_body": {
+      "name": "Нова назва"
+    },
+    "response_status": 200,
+    "response_body": {
+      "id": 101,
+      "name": "Нова назва",
+      "description": "Синтетичний опис",
+      "price": 299,
+      "stock": 10,
+      "regionId": 1,
+      "discountPercentage": 0,
+      "salesCount": 0,
+      "region": null,
+      "createdAt": "2026-11-20T10:00:00Z",
+      "updatedAt": null,
+      "developer": "Студія",
+      "publisher": "Видавець",
+      "releaseDate": null,
+      "category": "RPG",
+      "coverUrl": null,
+      "files": [],
+      "licenses": []
+    },
+    "error_example": {
+      "status": 400,
+      "body": {
+        "type": "about:blank",
+        "title": "One or more validation errors occurred.",
+        "status": 400,
+        "errors": {
+          "price": [
+            "Price must be greater than 0"
+          ]
+        }
+      }
+    },
+    "invalid_request_example": {
+      "name": "Не зберігати",
+      "price": -1
+    }
+  }
+]

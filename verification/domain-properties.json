@@ -1,0 +1,505 @@
+{
+  "Bill": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "UserId",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Currency",
+      "json_ignore": false
+    },
+    {
+      "type": "decimal",
+      "name": "TotalAmount",
+      "json_ignore": false
+    },
+    {
+      "type": "BillStatus",
+      "name": "Status",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "User?",
+      "name": "User",
+      "json_ignore": true
+    },
+    {
+      "type": "ICollection<BillItem>?",
+      "name": "BillItems",
+      "json_ignore": true
+    }
+  ],
+  "BillItem": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "BillId",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "ProductId",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "int",
+      "name": "Quantity",
+      "json_ignore": false
+    },
+    {
+      "type": "decimal",
+      "name": "PriceAtPurchase",
+      "json_ignore": false
+    },
+    {
+      "type": "Bill?",
+      "name": "Bill",
+      "json_ignore": true
+    },
+    {
+      "type": "Product?",
+      "name": "Product",
+      "json_ignore": true
+    }
+  ],
+  "Favorite": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "UserId",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "ProductId",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "User?",
+      "name": "User",
+      "json_ignore": true
+    },
+    {
+      "type": "Product?",
+      "name": "Product",
+      "json_ignore": true
+    }
+  ],
+  "ImageFile": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Path",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "FileName",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "MimeType",
+      "json_ignore": false
+    },
+    {
+      "type": "int?",
+      "name": "Width",
+      "json_ignore": false
+    },
+    {
+      "type": "int?",
+      "name": "Height",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong?",
+      "name": "UserId",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong?",
+      "name": "ProductId",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "User?",
+      "name": "User",
+      "json_ignore": true
+    },
+    {
+      "type": "Product?",
+      "name": "Product",
+      "json_ignore": true
+    }
+  ],
+  "License": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "ProductId",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "BillItemId",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "LicenseKey",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Status",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "ExpiresAt",
+      "json_ignore": false
+    },
+    {
+      "type": "Product?",
+      "name": "Product",
+      "json_ignore": true
+    },
+    {
+      "type": "BillItem?",
+      "name": "BillItem",
+      "json_ignore": true
+    }
+  ],
+  "PaymentOrder": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "ProviderTransactionId",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Provider",
+      "json_ignore": false
+    },
+    {
+      "type": "bool",
+      "name": "Success",
+      "json_ignore": false
+    },
+    {
+      "type": "decimal",
+      "name": "AmountInMinorUnits",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Currency",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "int",
+      "name": "TokensAmount",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "DeliveredAt",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "UserId",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "User?",
+      "name": "User",
+      "json_ignore": true
+    }
+  ],
+  "Product": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Name",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Description",
+      "json_ignore": false
+    },
+    {
+      "type": "decimal",
+      "name": "Price",
+      "json_ignore": false
+    },
+    {
+      "type": "int",
+      "name": "Stock",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong",
+      "name": "RegionId",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong?",
+      "name": "CoverFileId",
+      "json_ignore": false
+    },
+    {
+      "type": "int",
+      "name": "DiscountPercentage",
+      "json_ignore": false
+    },
+    {
+      "type": "int",
+      "name": "SalesCount",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Developer",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Publisher",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "ReleaseDate",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Category",
+      "json_ignore": false
+    },
+    {
+      "type": "Region?",
+      "name": "Region",
+      "json_ignore": true
+    },
+    {
+      "type": "ICollection<BillItem>?",
+      "name": "BillItems",
+      "json_ignore": true
+    },
+    {
+      "type": "ICollection<ImageFile>?",
+      "name": "Files",
+      "json_ignore": true
+    },
+    {
+      "type": "ImageFile?",
+      "name": "CoverFile",
+      "json_ignore": true
+    },
+    {
+      "type": "ICollection<License>?",
+      "name": "Licenses",
+      "json_ignore": true
+    }
+  ],
+  "Region": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Name",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Code",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "ICollection<Product>?",
+      "name": "Products",
+      "json_ignore": true
+    }
+  ],
+  "User": [
+    {
+      "type": "ulong",
+      "name": "Id",
+      "json_ignore": false
+    },
+    {
+      "type": "string?",
+      "name": "GoogleId",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Username",
+      "json_ignore": false
+    },
+    {
+      "type": "string",
+      "name": "Email",
+      "json_ignore": false
+    },
+    {
+      "type": "string?",
+      "name": "PasswordHash",
+      "json_ignore": false
+    },
+    {
+      "type": "UserRole",
+      "name": "Role",
+      "json_ignore": false
+    },
+    {
+      "type": "decimal",
+      "name": "BonusPoints",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime",
+      "name": "CreatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "DateTime?",
+      "name": "UpdatedAt",
+      "json_ignore": false
+    },
+    {
+      "type": "ulong?",
+      "name": "AvatarFileId",
+      "json_ignore": false
+    },
+    {
+      "type": "ImageFile?",
+      "name": "AvatarFile",
+      "json_ignore": true
+    },
+    {
+      "type": "ICollection<Bill>?",
+      "name": "Bills",
+      "json_ignore": true
+    }
+  ]
+}

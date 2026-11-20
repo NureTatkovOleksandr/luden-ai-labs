@@ -1,0 +1,19 @@
+{
+  "ux_head": "9beb0fe4a2b2734182ec233aa5084700f177491c",
+  "initial_input": "822a688a04bce5167f44226efbec952069042b6c",
+  "pre_revision": "0e0b1ddcfafb9ccaa455cbec8295ae757d7efd07",
+  "proposed_revision": "0f10d10a3d3a135952585ed196bf71b3cbaae1c3",
+  "backend_head": "fb5ba5a66f4b3001b608e3e3999c3aa2f0ccaaff",
+  "frontend_head": "ea90e7f465012d78d2f0593ad745ffb0ea07106c",
+  "review_confirmation": "USER_CONFIRMED",
+  "review_participants": [
+    "Паламарчук Антон",
+    "Татьков Олександр",
+    "Сергєєва Таісія",
+    "Панковський Тимофій"
+  ],
+  "review_event_date": null,
+  "individual_findings": null,
+  "p_approval": "NOT PROVIDED",
+  "initial_and_current_ac_count": 33
+}

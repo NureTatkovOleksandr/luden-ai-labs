@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-20",
+  "reviewer": "AI assistant, visual inspection of final rendered PNGs; not a new human reviewer",
+  "status": "PASS",
+  "pages_reviewed": [
+    1,
+    2
+  ],
+  "pdf_sha256": "96f3866b15e2df0fd866490d1f50a501f708f426ef901f2897bd57197417535e",
+  "observed": "Перевірено дві сторінки оновленого PDF для GitHub: посилання на версію здавання, українські символи, імена, абзаци й колонтитули читабельні; обрізання/накладання немає."
+}

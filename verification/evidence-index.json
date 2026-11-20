@@ -1,0 +1,195 @@
+{
+  "backend": {
+    "commit": "fb5ba5a66f4b3001b608e3e3999c3aa2f0ccaaff",
+    "branch": "main",
+    "clean": true,
+    "files": {
+      "Application/DTOs/BillDTOs/BillDto.cs": {
+        "sha256": "d5276d614454183afd100383c4e92a3ef2df7f96f51a0b20deef06731efd524e",
+        "lines": 11
+      },
+      "Application/DTOs/ProductDTOs/UpdateProductDto.cs": {
+        "sha256": "89638db7d0915a8b25c78b3d686fa598cf08cbc2a7fc6d8a8d538e9285a03867",
+        "lines": 30
+      },
+      "Application/DTOs/UserDTOs/UserRegisterDTO.cs": {
+        "sha256": "261b31ee2fde0d4dcb1a270d32787b8448fcfee8e02e8bfa3c54ccc40da4516e",
+        "lines": 14
+      },
+      "Application/Services/BillService.cs": {
+        "sha256": "6ba1cd935b92ab093c5de00302f858b12051685aa59d4166b3cbde72f9df5e65",
+        "lines": 154
+      },
+      "Application/Services/ProductService.cs": {
+        "sha256": "18cb69cdcfeed350a32e767dac3c99c0f626754ea4b56f39734fe7cc87897fe0",
+        "lines": 213
+      },
+      "Application/Services/Sha256PasswordHasher.cs": {
+        "sha256": "55e8c1176428b15cc9506865d15aa2bec03b17a026f013bdc8cd36b033ef3061",
+        "lines": 23
+      },
+      "Application/Services/StripeService.cs": {
+        "sha256": "e40e02582515531829f084cbe434d05b2af5179310108951337fa1ce38fac08e",
+        "lines": 231
+      },
+      "Entities/Enums/BillStatus.cs": {
+        "sha256": "a2ab43866b42c568f47f38247be4913be48894002059828ac34ed5413c59f79d",
+        "lines": 18
+      },
+      "Entities/Models/Bill.cs": {
+        "sha256": "bbb03b65ead961a50c35437c0adaf5b1689dc5f82b3d55731d9cc86c6bc14c28",
+        "lines": 23
+      },
+      "Entities/Models/BillItem.cs": {
+        "sha256": "2011b430f7270806491bd840ece36eb34d5965af86d3040199af16990b690409",
+        "lines": 22
+      },
+      "Entities/Models/Favorite.cs": {
+        "sha256": "f7da3907901b470bf51572a83a15e313bde12045c89b74d28509577b1e47849c",
+        "lines": 21
+      },
+      "Entities/Models/ImageFile.cs": {
+        "sha256": "045ec334df85f2d1a17afa61a67edf544409410c0fbcc37e7e887aaeecce6358",
+        "lines": 27
+      },
+      "Entities/Models/License.cs": {
+        "sha256": "d2aee419339430213dc680fc255b754adcaf894e4b81a1f523cf3df165205e47",
+        "lines": 23
+      },
+      "Entities/Models/PaymentOrder.cs": {
+        "sha256": "e609420a2d999272059a9f5c6b031e5272635513b09cccd35f1591288281428d",
+        "lines": 23
+      },
+      "Entities/Models/Product.cs": {
+        "sha256": "b9bd237e37045cec7f19044cb4f07ca7acf8c95a8d2ae0dc5fb6c3e73ea4827e",
+        "lines": 41
+      },
+      "Entities/Models/Region.cs": {
+        "sha256": "ae787135ddbaa7678b60721efed6878a0d9be379ce35ea60b1819aa07488fa8a",
+        "lines": 17
+      },
+      "Entities/Models/User.cs": {
+        "sha256": "3da73a8372f018d690db9ea721f8e7ac115d0baaaf9e46d952d5c7f7cf8604ef",
+        "lines": 28
+      },
+      "Infrastructure/FirebaseDatabase/FirebaseService.cs": {
+        "sha256": "a9d0c611dd61cd27ae88cba250ff8dd962fddc5e1089371706039c9938c3369c",
+        "lines": 81
+      },
+      "Infrastructure/Repositories/GenericRepository.cs": {
+        "sha256": "11c744ec4429652e0f5ee14120fb9de06157d23b0c5b11923db8c377af49fbd4",
+        "lines": 188
+      },
+      "Infrastructure/Repositories/UserRepository.cs": {
+        "sha256": "faa543a6bca7cdcae8511b6324f890e68b633cbe2550451c7b3fa19addf6522f",
+        "lines": 165
+      },
+      "LudenWebAPI/Controllers/AuthorizationController.cs": {
+        "sha256": "25b1c7fae258474b480416aa94c1e822818dc95755db973b070f3d8cb6c5de98",
+        "lines": 43
+      },
+      "LudenWebAPI/Controllers/BillController.cs": {
+        "sha256": "ef4f7f7ecc1d9923a17155f503b36e62fea5aa30663d5c6ba77b7af01d647a62",
+        "lines": 186
+      },
+      "LudenWebAPI/Controllers/PaymentController.cs": {
+        "sha256": "212c8d8823c9370833107e80891adea1ffba0de24eb9a1cd2fe848cc42ad8c5b",
+        "lines": 79
+      },
+      "LudenWebAPI/Controllers/ProductController.cs": {
+        "sha256": "6589e009c970fd4525065ba10c7879a7e4fe87818b4e2def8e5e44e951a305cb",
+        "lines": 191
+      },
+      "LudenWebAPI/Controllers/UserController.cs": {
+        "sha256": "93f263f74a798daa55407fe2cf11da3fca29fdc0bca725c079a0cf3d8b5aa46f",
+        "lines": 275
+      },
+      "LudenWebAPI/LudenWebAPI.csproj": {
+        "sha256": "a92ac640414f4d6760e43ec78a06d610c16ba8b50828fd24aee196a3fb1b80df",
+        "lines": 32
+      },
+      "LudenWebAPI/LudenWebAPI/Program.cs": {
+        "sha256": "6dcea3fd6c00527902b0c6865a997c279956377c202adca0b4580fb2353900f1",
+        "lines": 335
+      },
+      "LudenWebAPI/Program.cs": {
+        "sha256": "44a2374780558bc783169523e0f7fc559ef809607d9d6206933dfba732bb20a2",
+        "lines": 211
+      }
+    }
+  },
+  "frontend": {
+    "commit": "ea90e7f465012d78d2f0593ad745ffb0ea07106c",
+    "branch": "main",
+    "clean": true,
+    "files": {
+      "src/app/router/routes.tsx": {
+        "sha256": "6121096d3632fca99f6e7048caaed93ff365a74e146e7b297b04ffb454942390",
+        "lines": 46
+      },
+      "src/components/PaymentModal/index.tsx": {
+        "sha256": "c325db146f400bc10116d9c339559cf43e91cf20caadeb776963ea800a1658b3",
+        "lines": 343
+      },
+      "src/entities/Cart/model/cartSlice.ts": {
+        "sha256": "73c2ffbf46756c2e3b5e07f5cbeb3ee350ffee64f0c5e12f49f21344952e6937",
+        "lines": 77
+      },
+      "src/pages/ProfilePage/index.tsx": {
+        "sha256": "7bd5d5129325a23cb64a14ec51223c5bac51120abe2f7512952fafe03ed4df60",
+        "lines": 535
+      },
+      "src/pages/RegistrationPage/index.tsx": {
+        "sha256": "1be8ea9e2c08aa1087d91b53021a44be3be97ab6fc3c770c26bcb81ed5da35a6",
+        "lines": 276
+      },
+      "src/pages/StorePage/index.tsx": {
+        "sha256": "83bdf4d56dcbe626b3946cd564cd6fd8b4ef01ca2f90b81d036e438c32fc4e7e",
+        "lines": 785
+      },
+      "src/services/PaymentService.ts": {
+        "sha256": "044e343ca8e56b8630baa039b7fe0e8b7d48ff51c3d502db78325776cbdf6837",
+        "lines": 46
+      },
+      "src/widgets/Cart/ui/Cart.tsx": {
+        "sha256": "abb0a5c31e41313a021a7058561b280fa8268bd6d129a66cf9c1166371e4d177",
+        "lines": 268
+      }
+    }
+  },
+  "ux_ui": {
+    "commit": "9beb0fe4a2b2734182ec233aa5084700f177491c",
+    "branch": "main",
+    "clean": true,
+    "files": {
+      "01_requirements/01_Input_Pack_v0.1.md": {
+        "sha256": "20d6acc9832c7fd2428e874b631053e522b1f636fff954ba2f806cc07cb4ac54",
+        "lines": 54
+      },
+      "01_requirements/Decision_Log.md": {
+        "sha256": "0923a5fd7524a67ea06be406faf179b566ef3d103f66f10f15b8f524286d477a",
+        "lines": 55
+      }
+    },
+    "historical_snapshots": {
+      "822a688a04bce5167f44226efbec952069042b6c": {
+        "01_requirements/01_Input_Pack_v0.1.md": {
+          "sha256": "c051e00169ba0493858175b0dd537f64ff2dc52cc3969cd9e3d13fb4ca6801a5",
+          "lines": 34
+        }
+      },
+      "0e0b1ddcfafb9ccaa455cbec8295ae757d7efd07": {
+        "01_requirements/01_Input_Pack_v0.1.md": {
+          "sha256": "55d181adcb79c5467677b01eee52cf9b0d3730de1a58b069b3eca92a2934751e",
+          "lines": 38
+        }
+      },
+      "0f10d10a3d3a135952585ed196bf71b3cbaae1c3": {
+        "01_requirements/Decision_Log.md": {
+          "sha256": "0923a5fd7524a67ea06be406faf179b566ef3d103f66f10f15b8f524286d477a",
+          "lines": 55
+        }
+      }
+    }
+  }
+}

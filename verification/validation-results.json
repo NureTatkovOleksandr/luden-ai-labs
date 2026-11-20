@@ -1,0 +1,229 @@
+{
+  "date": "2026-11-20",
+  "checks": [
+    {
+      "check": "Primary 33 AC exact source meaning",
+      "status": "PASS",
+      "detail": {
+        "count": 33,
+        "missing": [],
+        "changed": []
+      }
+    },
+    {
+      "check": "Original 8 stories",
+      "status": "PASS",
+      "detail": [
+        "US-01",
+        "US-02",
+        "US-03",
+        "US-04",
+        "US-05",
+        "US-06",
+        "US-07",
+        "US-08"
+      ]
+    },
+    {
+      "check": "Per-AC historical provenance",
+      "status": "PASS",
+      "detail": {
+        "initial": "822a688a04bce5167f44226efbec952069042b6c",
+        "baseline": "0e0b1ddcfafb9ccaa455cbec8295ae757d7efd07",
+        "current": "9beb0fe4a2b2734182ec233aa5084700f177491c"
+      }
+    },
+    {
+      "check": "Semantic regressions and test oracles",
+      "status": "PASS",
+      "detail": {
+        "errors": [],
+        "scope": "source equality plus password toggle, cancel, empty/block and navigation; not a new human review"
+      }
+    },
+    {
+      "check": "CSV syntax, references and status",
+      "status": "PASS",
+      "detail": {
+        "rows": 64,
+        "errors": []
+      }
+    },
+    {
+      "check": "Original AC documentary coverage",
+      "status": "PASS",
+      "detail": {
+        "original_ac": "33/33",
+        "original_src": "5/6",
+        "candidate_src": "6/6 with proposed US09",
+        "code_coverage": "NOT MEASURED"
+      }
+    },
+    {
+      "check": "56 future tests all traced",
+      "status": "PASS",
+      "detail": {
+        "defined": 56,
+        "executed": 0,
+        "status": "NOT RUN"
+      }
+    },
+    {
+      "check": "Extensions not relabeled original AC",
+      "status": "PASS",
+      "detail": {
+        "extensions": 10
+      }
+    },
+    {
+      "check": "Moved Markdown links",
+      "status": "PASS",
+      "detail": {
+        "checked": 93,
+        "broken": []
+      }
+    },
+    {
+      "check": "Pinned GitHub paths and lines",
+      "status": "PASS",
+      "detail": {
+        "checked": 171,
+        "invalid": []
+      }
+    },
+    {
+      "check": "Markdown and JSON syntax",
+      "status": "PASS",
+      "detail": {
+        "json_blocks": 24,
+        "errors": []
+      }
+    },
+    {
+      "check": "Per-operation API examples",
+      "status": "PASS",
+      "detail": "18 implemented +4 proposed; synthetic NOT RUN; multipart fields are a representation, not JSON wire"
+    },
+    {
+      "check": "Actual model field coverage",
+      "status": "PASS",
+      "detail": {
+        "entities": 9,
+        "properties": 97,
+        "missing": []
+      }
+    },
+    {
+      "check": "Full state matrix",
+      "status": "PASS",
+      "detail": {
+        "states": 5,
+        "cells": 25
+      }
+    },
+    {
+      "check": "PATCH null/missing and atomic rules",
+      "status": "PASS",
+      "detail": "Nullable clear distinct from missing; nonnullable null/mixed invalid do not persist"
+    },
+    {
+      "check": "P01-P08 and version conflicts explicit",
+      "status": "PASS",
+      "detail": "No blanket acceptance of P proposals from team review"
+    },
+    {
+      "check": "Confirmed four-person team review",
+      "status": "PASS",
+      "detail": {
+        "participants": [
+          "Паламарчук Антон",
+          "Татьков Олександр",
+          "Сергєєва Таісія",
+          "Панковський Тимофій"
+        ],
+        "basis": "direct user confirmation",
+        "review_date": null,
+        "individual_findings": "not fabricated"
+      }
+    },
+    {
+      "check": "No obsolete active blockers",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Clean current repository snapshots",
+      "status": "PASS",
+      "detail": {
+        "backend": "fb5ba5a66f4b3001b608e3e3999c3aa2f0ccaaff",
+        "frontend": "ea90e7f465012d78d2f0593ad745ffb0ea07106c",
+        "ux_ui": "9beb0fe4a2b2734182ec233aa5084700f177491c"
+      }
+    },
+    {
+      "check": "PDF matches current Markdown",
+      "status": "PASS",
+      "detail": "Current source hash"
+    },
+    {
+      "check": "Short Ukrainian report PDF",
+      "status": "PASS",
+      "detail": {
+        "pages": 2,
+        "Ukrainian_text": true
+      }
+    },
+    {
+      "check": "Final PDF visual inspection",
+      "status": "PASS",
+      "detail": {
+        "date": "2026-11-20",
+        "reviewer": "AI assistant, visual inspection of final rendered PNGs; not a new human reviewer",
+        "status": "PASS",
+        "pages_reviewed": [
+          1,
+          2
+        ],
+        "pdf_sha256": "96f3866b15e2df0fd866490d1f50a501f708f426ef901f2897bd57197417535e",
+        "observed": "Перевірено дві сторінки оновленого PDF для GitHub: посилання на версію здавання, українські символи, імена, абзаци й колонтитули читабельні; обрізання/накладання немає."
+      }
+    },
+    {
+      "check": "Actual Mermaid parser",
+      "status": "PASS",
+      "detail": {
+        "architecture_sha256": "4209096c4f2cb20dc24f0ebb3e3bd645f7522d86a78af43f1e6863f7f1283d26",
+        "parser": "mermaid 11.17.2",
+        "diagrams": [
+          {
+            "diagram": 1,
+            "status": "PASS",
+            "type": "flowchart LR"
+          },
+          {
+            "diagram": 2,
+            "status": "PASS",
+            "type": "erDiagram"
+          },
+          {
+            "diagram": 3,
+            "status": "PASS",
+            "type": "sequenceDiagram"
+          },
+          {
+            "diagram": 4,
+            "status": "PASS",
+            "type": "sequenceDiagram"
+          }
+        ]
+      }
+    }
+  ],
+  "product_tests": {
+    "defined": 56,
+    "executed": 0,
+    "status": "NOT RUN"
+  },
+  "human_review": "CONFIRMED_BY_USER_FOUR_PARTICIPANTS",
+  "P_approval": "NOT PROVIDED"
+}

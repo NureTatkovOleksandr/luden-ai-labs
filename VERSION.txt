@@ -1,0 +1,10 @@
+Luden ЛР1 — окремий публічний знімок
+URL: https://github.com/NureTatkovOleksandr/luden-ai-labs
+Owner: NureTatkovOleksandr; visibility: public (вибір користувача)
+Branch: main
+Tags: lab01-spec і lab01-spec-published — той самий публічний commit.
+Точний commit: git rev-parse lab01-spec^{commit}
+Джерельна локальна редакція: dd2463412b7a946cdc4b860160ceb6f82f8791ff.
+Повна локальна історія й архіви не видалені, але не входять до публічного Git-графа.
+33/33 AC; 8/8 US; 56 продуктових TC: NOT RUN.
+Методички перевірені локально; предметну область Luden збережено.

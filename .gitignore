@@ -1,0 +1,7 @@
+*.bundle
+tools/node_modules/
+tools/package-lock.json
+__pycache__/
+*.pyc
+.env
+.env.*
